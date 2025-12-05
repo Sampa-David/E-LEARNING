@@ -13,7 +13,7 @@
                     <!-- Sidebar Header -->
                     <div class="card-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; padding: 2rem 1.5rem;">
                         <div class="text-center text-white">
-                            <img src="{{ asset('assets/img/person/person-f-12.webp') }}" alt="Avatar" class="rounded-circle" style="width: 60px; height: 60px; border: 3px solid white; object-fit: cover; margin-bottom: 1rem;">
+                            <img src="{{ secure_asset('assets/img/person/person-f-12.webp') }}" alt="Avatar" class="rounded-circle" style="width: 60px; height: 60px; border: 3px solid white; object-fit: cover; margin-bottom: 1rem;">
                             <h5 class="mb-1" style="font-weight: 700;">{{ Auth::user()->name }}</h5>
                             <small style="opacity: 0.9;"><i class="bi bi-mortarboard"></i> Student</small>
                         </div>

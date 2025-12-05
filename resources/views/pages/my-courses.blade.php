@@ -15,7 +15,7 @@
         <div class="card border-0 shadow-lg" style="border-radius: 12px; overflow: hidden;">
           <div class="row g-0">
             <div class="col-md-4" style="overflow: hidden;">
-              <img src="{{ asset('assets/img/education/education-4.webp') }}" alt="Course" class="img-fluid h-100" style="object-fit: cover;">
+              <img src="{{ secure_asset('assets/img/education/education-4.webp') }}" alt="Course" class="img-fluid h-100" style="object-fit: cover;">
             </div>
             <div class="col-md-8">
               <div class="card-body">
@@ -51,7 +51,7 @@
         <div class="card border-0 shadow-lg" style="border-radius: 12px; overflow: hidden;">
           <div class="row g-0">
             <div class="col-md-4" style="overflow: hidden;">
-              <img src="{{ asset('assets/img/education/education-3.webp') }}" alt="Course" class="img-fluid h-100" style="object-fit: cover;">
+              <img src="{{ secure_asset('assets/img/education/education-3.webp') }}" alt="Course" class="img-fluid h-100" style="object-fit: cover;">
             </div>
             <div class="col-md-8">
               <div class="card-body">

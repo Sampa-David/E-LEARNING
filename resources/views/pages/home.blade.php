@@ -63,7 +63,7 @@
               </div>
             </div>
             <div class="col-lg-6 hero-media" data-aos="zoom-in" data-aos-delay="200">
-              <img src="{{ asset('assets/img/education/showcase-6.webp') }}" alt="E-Learning" class="img-fluid main-image">
+              <img src="{{ secure_asset('assets/img/education/showcase-6.webp') }}" alt="E-Learning" class="img-fluid main-image">
               <div class="image-overlay">
                 <div class="badge-accredited">
                   <i class="bi bi-patch-check-fill"></i>
@@ -130,7 +130,7 @@
           <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
             <div class="course-card">
               <div class="course-image">
-                <img src="{{ asset('assets/img/education/education-4.webp') }}" alt="Course" class="img-fluid">
+                <img src="{{ secure_asset('assets/img/education/education-4.webp') }}" alt="Course" class="img-fluid">
                 <div class="course-badge">Beginner</div>
               </div>
               <div class="course-body">
@@ -149,7 +149,7 @@
           <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
             <div class="course-card">
               <div class="course-image">
-                <img src="{{ asset('assets/img/education/education-6.webp') }}" alt="Course" class="img-fluid">
+                <img src="{{ secure_asset('assets/img/education/education-6.webp') }}" alt="Course" class="img-fluid">
                 <div class="course-badge">Intermediate</div>
               </div>
               <div class="course-body">
@@ -168,7 +168,7 @@
           <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
             <div class="course-card">
               <div class="course-image">
-                <img src="{{ asset('assets/img/education/education-8.webp') }}" alt="Course" class="img-fluid">
+                <img src="{{ secure_asset('assets/img/education/education-8.webp') }}" alt="Course" class="img-fluid">
                 <div class="course-badge">Advanced</div>
               </div>
               <div class="course-body">

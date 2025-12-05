@@ -70,7 +70,7 @@
             <div class="card border-0 shadow-lg h-100" style="border-radius: 12px; overflow: hidden; transition: all 0.3s ease;">
               <!-- Image -->
               <div style="position: relative; overflow: hidden; height: 200px;">
-                <img src="{{ asset('assets/img/education/education-4.webp') }}" alt="Course" class="img-fluid w-100 h-100" style="object-fit: cover;">
+                <img src="{{ secure_asset('assets/img/education/education-4.webp') }}" alt="Course" class="img-fluid w-100 h-100" style="object-fit: cover;">
                 <span class="badge" style="position: absolute; top: 10px; right: 10px; background: #667eea; color: white; padding: 0.5rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Beginner</span>
               </div>
 
@@ -107,7 +107,7 @@
             <div class="card border-0 shadow-lg h-100" style="border-radius: 12px; overflow: hidden; transition: all 0.3s ease;">
               <!-- Image -->
               <div style="position: relative; overflow: hidden; height: 200px;">
-                <img src="{{ asset('assets/img/education/education-3.webp') }}" alt="Course" class="img-fluid w-100 h-100" style="object-fit: cover;">
+                <img src="{{ secure_asset('assets/img/education/education-3.webp') }}" alt="Course" class="img-fluid w-100 h-100" style="object-fit: cover;">
                 <span class="badge" style="position: absolute; top: 10px; right: 10px; background: #764ba2; color: white; padding: 0.5rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Intermediate</span>
               </div>
 
@@ -144,7 +144,7 @@
             <div class="card border-0 shadow-lg h-100" style="border-radius: 12px; overflow: hidden; transition: all 0.3s ease;">
               <!-- Image -->
               <div style="position: relative; overflow: hidden; height: 200px;">
-                <img src="{{ asset('assets/img/education/education-2.webp') }}" alt="Course" class="img-fluid w-100 h-100" style="object-fit: cover;">
+                <img src="{{ secure_asset('assets/img/education/education-2.webp') }}" alt="Course" class="img-fluid w-100 h-100" style="object-fit: cover;">
                 <span class="badge" style="position: absolute; top: 10px; right: 10px; background: #dc3545; color: white; padding: 0.5rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Advanced</span>
               </div>
 

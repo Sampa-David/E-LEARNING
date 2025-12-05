@@ -15,7 +15,7 @@
       <div class="col-lg-4 mb-4">
         <div class="card border-0 shadow-lg" style="border-radius: 12px; overflow: hidden;">
           <div class="card-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; padding: 2rem; text-align: center;">
-            <img src="{{ asset('assets/img/person/person-f-12.webp') }}" alt="Profile" class="rounded-circle" style="width: 100px; height: 100px; border: 4px solid white; object-fit: cover;">
+            <img src="{{ secure_asset('assets/img/person/person-f-12.webp') }}" alt="Profile" class="rounded-circle" style="width: 100px; height: 100px; border: 4px solid white; object-fit: cover;">
           </div>
           <div class="card-body text-center p-4">
             <h5 class="fw-700" style="color: #2c3e50; margin-bottom: 0.5rem;">John Doe</h5>
