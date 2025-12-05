@@ -1,0 +1,41 @@
+# Node modules
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# PHP
+vendor/
+composer.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment
+.env.local
+.env.*.local
+
+# Testing
+coverage/
+.phpunit.result.cache
+
+# Storage (temp files during deployment)
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/logs/*
+
+# Build
+dist/
+build/
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+docs/
+README.md

@@ -1,8 +1,6 @@
 {
-  "version": 2,
+  "$schema": "https://railway.app/schema/railway.json",
   "build": {
-    "env": {
-      "BUILDPACK_URL": "https://buildpacks.io/buildpacks/paketo-buildpacks/php"
-    }
+    "builder": "paketobuildpacks/builder:full"
   }
 }
