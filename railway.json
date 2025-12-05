@@ -2,5 +2,9 @@
   "$schema": "https://railway.app/schema/railway.json",
   "build": {
     "buildCommand": "composer install --no-dev && npm install && npm run build"
+  },
+  "deploy": {
+    "preDeploy": "bash scripts/pre-deploy.sh",
+    "startCommand": "php -S 0.0.0.0:${PORT:-8080} -t public"
   }
 }
