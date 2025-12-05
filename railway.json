@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "build": {
+    "env": {
+      "BUILDPACK_URL": "https://buildpacks.io/buildpacks/paketo-buildpacks/php"
+    }
+  }
+}
