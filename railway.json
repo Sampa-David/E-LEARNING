@@ -4,7 +4,7 @@
     "buildCommand": "npm install && npm run build && composer install --no-dev"
   },
   "deploy": {
-    "preDeploy": "bash verify-build.sh && mkdir -p storage/logs storage/framework/{cache,sessions,testing} && chmod -R 775 storage bootstrap/cache && php artisan key:generate --force && php artisan migrate --force --no-interaction && php artisan db:seed --force --no-interaction",
+    "preDeploy": "mkdir -p storage/logs storage/framework/{cache,sessions,testing} && chmod -R 775 storage bootstrap/cache && php artisan key:generate --force && php artisan config:cache && php artisan migrate --force --no-interaction",
     "startCommand": "php -S 0.0.0.0:${PORT:-8080} -t public"
   }
 }
