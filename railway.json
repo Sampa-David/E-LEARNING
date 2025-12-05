@@ -1,6 +1,6 @@
 {
   "$schema": "https://railway.app/schema/railway.json",
   "build": {
-    "builder": "paketobuildpacks/builder:full"
+    "buildCommand": "composer install --no-dev && npm install && npm run build"
   }
 }
