@@ -1,4 +1,4 @@
-# College Website - Laravel 12
+# E-Learning Website - Laravel 12
 
 Ce projet transforme le template HTML College en une application Laravel 12 complète avec Blade, routes et assets.
 

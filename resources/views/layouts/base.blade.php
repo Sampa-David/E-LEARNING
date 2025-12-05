@@ -44,16 +44,48 @@
         <ul>
           <li><a href="{{ route('home') }}" class="@if(Route::currentRouteName() === 'home') active @endif">Home</a></li>
           <li><a href="{{ route('courses') }}">Courses</a></li>
-          <li><a href="{{ route('my-courses') }}">My Courses</a></li>
-          <li class="dropdown">
-            <a href="#"><span>Account</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="{{ route('profile') }}">My Profile</a></li>
-              <li><a href="{{ route('settings') }}">Settings</a></li>
-              <li><a href="{{ route('privacy') }}">Privacy</a></li>
-            </ul>
-          </li>
           <li><a href="{{ route('contact') }}">Contact</a></li>
+          <li><a href="{{ route('privacy') }}">Privacy</a></li>
+          
+          <!-- Séparateur -->
+          <li style="border-left: 1px solid #ccc; margin: 0 10px;"></li>
+          
+          <!-- ========== BOUTONS D'AUTHENTIFICATION ========== -->
+          @guest
+            <!-- Si non connecté: Login et Register -->
+            <li><a href="{{ route('login') }}" class="btn btn-sm btn-primary" style="padding: 8px 16px; border-radius: 4px; display: inline-block;">
+              <i class="bi bi-box-arrow-in-right"></i> Login
+            </a></li>
+            <li><a href="{{ route('register') }}" class="btn btn-sm btn-outline-primary" style="padding: 8px 16px; border-radius: 4px; display: inline-block; border: 1px solid #0d6efd; color: #0d6efd;">
+              <i class="bi bi-person-plus"></i> Register
+            </a></li>
+          @endauth
+          
+          @auth
+            <!-- Si connecté: Afficher le nom et menu déroulant -->
+            <li class="dropdown">
+              <a href="#"><span><i class="bi bi-person-circle"></i> {{ Auth::user()->name }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="{{ route('profile') }}">My Profile</a></li>
+                @if(Auth::user()->isStudent())
+                  <li><a href="{{ route('student.dashboard') }}">Dashboard</a></li>
+                @elseif(Auth::user()->isTeacher())
+                  <li><a href="{{ route('teacher.dashboard') }}">Dashboard</a></li>
+                @elseif(Auth::user()->isSuperAdmin())
+                  <li><a href="{{ route('superadmin.dashboard') }}">Admin Panel</a></li>
+                @endif
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                    @csrf
+                    <button type="submit" class="dropdown-item" style="border: none; background: none; cursor: pointer; padding: 0.5rem 1rem; text-align: left; width: 100%;">
+                      <i class="bi bi-box-arrow-right"></i> Logout
+                    </button>
+                  </form>
+                </li>
+              </ul>
+            </li>
+          @endauth
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -91,7 +123,19 @@
           <h4>Learning</h4>
           <ul>
             <li><a href="{{ route('courses') }}">Browse Courses</a></li>
-            <li><a href="{{ route('my-courses') }}">My Courses</a></li>
+            <!-- Lien "My Courses" adapté au rôle de l'utilisateur -->
+            @auth
+              @if(Auth::user()->isStudent())
+                <li><a href="{{ route('student.my-courses') }}">My Courses</a></li>
+              @elseif(Auth::user()->isTeacher())
+                <li><a href="{{ route('teacher.my-courses') }}">My Courses</a></li>
+              @else
+                <li><a href="{{ route('courses') }}">My Courses</a></li>
+              @endif
+            @endauth
+            @guest
+              <li><a href="{{ route('register') }}">My Courses</a></li>
+            @endguest
             <li><a href="">Popular Topics</a></li>
             <li><a href="">New Courses</a></li>
           </ul>

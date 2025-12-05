@@ -27,8 +27,39 @@
                 </div>
               </div>
               <div class="action-buttons">
-                <a href="{{ route('courses') }}" class="btn-primary">Explore Courses</a>
-                <a href="{{ route('contact') }}" class="btn-secondary">Get Started</a>
+                <!-- ========== SI UTILISATEUR EST CONNECTÉ ========== -->
+                @auth
+                  <!-- Afficher les options de dashboard selon le rôle -->
+                  @if(Auth::user()->isStudent())
+                    <a href="{{ route('student.dashboard') }}" class="btn-primary">Go to Dashboard</a>
+                    <a href="{{ route('courses') }}" class="btn-secondary">Explore Courses</a>
+                  @elseif(Auth::user()->isTeacher())
+                    <a href="{{ route('teacher.dashboard') }}" class="btn-primary">My Courses</a>
+                    <a href="{{ route('teacher.create-course') }}" class="btn-secondary">Create Course</a>
+                  @elseif(Auth::user()->isSuperAdmin())
+                    <a href="{{ route('superadmin.dashboard') }}" class="btn-primary">Admin Panel</a>
+                    <a href="{{ route('superadmin.users') }}" class="btn-secondary">Manage Users</a>
+                  @endif
+                  
+                  <!-- Bouton déconnexion -->
+                  <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                    @csrf
+                    <button type="submit" class="btn-outline-danger" style="padding: 10px 20px; border: 2px solid #dc3545; background: transparent; color: #dc3545; text-decoration: none; border-radius: 4px; cursor: pointer;">
+                      <i class="bi bi-box-arrow-right"></i> Logout
+                    </button>
+                  </form>
+                @endauth
+                
+                <!-- ========== SI UTILISATEUR N'EST PAS CONNECTÉ ========== -->
+                @guest
+                  <a href="{{ route('courses') }}" class="btn-primary">Explore Courses</a>
+                  <a href="{{ route('register') }}" class="btn-secondary">Get Started</a>
+                  
+                  <!-- Boutons secondaires: Login -->
+                  <div style="margin-top: 15px;">
+                    <small>Already have an account? <a href="{{ route('login') }}" style="color: #007bff; text-decoration: none; font-weight: 500;">Login here</a></small>
+                  </div>
+                @endguest
               </div>
             </div>
             <div class="col-lg-6 hero-media" data-aos="zoom-in" data-aos-delay="200">

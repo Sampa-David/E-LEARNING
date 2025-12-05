@@ -11,7 +11,15 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // ========== ENREGISTRER LES MIDDLEWARES PERSONNALISÉS ==========
+        // Ces middlewares sont disponibles globalement dans l'application
+        
+        // Middleware pour vérifier le rôle de l'utilisateur
+        // Utilisation: Route::middleware('check.role:student,teacher')->group(...)
+        $middleware->alias([
+            'check.role' => \App\Http\Middleware\CheckRole::class,
+            'check.permission' => \App\Http\Middleware\CheckPermission::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
