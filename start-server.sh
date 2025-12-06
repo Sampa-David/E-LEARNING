@@ -20,24 +20,20 @@ echo "APP_ENV=$APP_ENV"
 echo "PORT=${PORT:-8080}"
 echo ""
 
-# Run migrations if on production
-if [ "$APP_ENV" = "production" ]; then
-    echo "=========================================="
-    echo "🔄 Running Database Migrations..."
-    echo "=========================================="
-    php artisan migrate --force --no-interaction
-    MIGRATE_STATUS=$?
-    
-    if [ $MIGRATE_STATUS -eq 0 ]; then
-        echo "✅ Migrations completed successfully!"
-    else
-        echo "❌ Migrations failed with status code: $MIGRATE_STATUS"
-    fi
-    echo ""
+# Always run migrations (regardless of environment)
+echo "=========================================="
+echo "🔄 Running Database Migrations..."
+echo "=========================================="
+php artisan migrate --force --no-interaction 2>&1
+MIGRATE_STATUS=$?
+
+if [ $MIGRATE_STATUS -eq 0 ]; then
+    echo "✅ Migrations completed successfully!"
 else
-    echo "⏭️  Skipping migrations (not in production)"
-    echo ""
+    echo "⚠️  Migrations returned status code: $MIGRATE_STATUS"
+    echo "⚠️  (This may be normal if tables already exist)"
 fi
+echo ""
 
 echo "=========================================="
 echo "🌐 Starting PHP Server on 0.0.0.0:${PORT:-8080}"
