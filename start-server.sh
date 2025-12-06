@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Get the Railway domain from the request host or use default
 # Railway provides RAILWAY_PUBLIC_DOMAIN or we can construct from environment
