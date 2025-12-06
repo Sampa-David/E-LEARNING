@@ -14,5 +14,12 @@ export APP_URL
 
 echo "Starting Laravel with APP_URL=$APP_URL"
 
+# Run migrations if on production
+if [ "$APP_ENV" = "production" ]; then
+    echo "Running migrations..."
+    php artisan migrate --force --no-interaction
+    echo "Migrations completed!"
+fi
+
 # Run PHP built-in server
 php -S 0.0.0.0:${PORT:-8080} -t public

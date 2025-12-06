@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>@yield('title', 'College') - College Bootstrap Template</title>
+  <title>@yield('title', 'College') </title>
   <meta name="description" content="@yield('description', '')">
   <meta name="keywords" content="@yield('keywords', '')">
 
