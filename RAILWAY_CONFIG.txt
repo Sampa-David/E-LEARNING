@@ -1,0 +1,18 @@
+Write-Host "Configuration des variables d'environnement Railway" -ForegroundColor Cyan
+Write-Host ""
+Write-Host "Variables a mettre a jour :" -ForegroundColor Yellow
+Write-Host "  DB_HOST = mysql.railway.internal" -ForegroundColor Green
+Write-Host "  DB_PORT = 3306" -ForegroundColor Green
+Write-Host "  DB_USERNAME = root" -ForegroundColor Green
+Write-Host "  DB_PASSWORD = kTRGorKSpkCzShkYbBixbShLWMXYQQPE" -ForegroundColor Green
+Write-Host "  DB_DATABASE = railway" -ForegroundColor Green
+Write-Host ""
+Write-Host "INSTRUCTIONS :" -ForegroundColor Yellow
+Write-Host "1. Allez sur https://railway.app" -ForegroundColor White
+Write-Host "2. Connectez-vous avec davidjosiassampa@gmail.com" -ForegroundColor White
+Write-Host "3. Selectionnez le projet natural-integrity" -ForegroundColor White
+Write-Host "4. Allez dans l'onglet Variables" -ForegroundColor White
+Write-Host "5. Selectionnez le service web" -ForegroundColor White
+Write-Host "6. Modifiez les 5 variables ci-dessus" -ForegroundColor White
+Write-Host ""
+Write-Host "Cela permettra au service web de se connecter a MySQL via le reseau interne." -ForegroundColor Green

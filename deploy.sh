@@ -3,6 +3,12 @@ set -e
 
 echo "🚀 Starting deployment..."
 
+# Copy production env file if it exists
+if [ -f ".env.production" ]; then
+  echo "Loading production environment..."
+  cp .env.production .env
+fi
+
 # Clear caches
 echo "Clearing caches..."
 php artisan config:clear
